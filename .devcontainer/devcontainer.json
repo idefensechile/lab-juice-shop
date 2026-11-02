@@ -1,0 +1,18 @@
+{
+  // Ubuntu 24.04 fijado: en "ubuntu" (26.04) docker-in-docker aún no instala.
+  "name": "TS Cyber Academy · OWASP Juice Shop",
+  "image": "mcr.microsoft.com/devcontainers/base:ubuntu-24.04",
+  "features": {
+    "ghcr.io/devcontainers/features/docker-in-docker:2": {}
+  },
+  // Máquina mínima (2 núcleos) para gastar la menor cuota posible.
+  "hostRequirements": { "cpus": 2 },
+  "postStartCommand": "bash .devcontainer/start.sh",
+  "forwardPorts": [3000],
+  "portsAttributes": {
+    "3000": { "label": "OWASP Juice Shop", "onAutoForward": "openBrowser" }
+  },
+  "customizations": {
+    "codespaces": { "openFiles": ["README.md"] }
+  }
+}

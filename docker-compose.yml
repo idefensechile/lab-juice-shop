@@ -1,0 +1,9 @@
+# TS Cyber Academy · Lab OWASP Juice Shop
+# App deliberadamente vulnerable: se publica SOLO en 127.0.0.1.
+services:
+  juice-shop:
+    image: bkimminich/juice-shop
+    container_name: ts-lab-juice-shop
+    ports:
+      - "127.0.0.1:3000:3000"
+    restart: unless-stopped
